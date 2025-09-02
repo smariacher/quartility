@@ -1,16 +1,19 @@
 import os
 import zipfile
 
-def compress_to_zip(folder_path):
+def compress_to_zip(folder_path, output_dir = './projects'):
     """
-    Compresses the given folder into a ZIP archive and saves it to ./_projects
+    Compresses the given folder into a ZIP archive and saves it to ./projects
     with the same name as the folder.
+
+    Parameters:
+        folder_path (str): Path to the folder to compress.
+        output_dir (str): Directory to save the zip file. Relative paths are resolved from the current working directory.
     """
     if not os.path.isdir(folder_path):
         raise ValueError(f"{folder_path} is not a valid folder")
 
     # Ensure output folder exists
-    output_dir = './_projects'
     os.makedirs(output_dir, exist_ok=True)
 
     # Name of the output zip file
