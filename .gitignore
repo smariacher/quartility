@@ -61,3 +61,8 @@ dmypy.json
 
 # Pip freezed requirements
 requirements.txt
+
+# Folder created by testing
+
+_projects
+_freeze

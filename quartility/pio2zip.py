@@ -1,7 +1,7 @@
 import os
 import zipfile
 
-def compress_to_zip(folder_path, output_dir = './projects'):
+def compress_to_zip(folder_path, output_dir = './_projects'):
     """
     Compresses the given folder into a ZIP archive and saves it to ./projects
     with the same name as the folder.
