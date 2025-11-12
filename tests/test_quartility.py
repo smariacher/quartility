@@ -15,7 +15,7 @@ def test_displayPages():
         # skip test if PDF not present
         pytest.skip("PDF not found")
     try:
-        displayPages(PDF_PATH, [1, 2, 3])
+        displayPages(PDF_PATH, list(range(97,101)))
     except Exception as e:
         pytest.fail(f"displayPages raised an exception: {e}")
 

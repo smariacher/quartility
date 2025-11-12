@@ -64,13 +64,12 @@ def displayPages(pdf_path, page_numbers, save_folder = "_freeze/pdf/"):
         else:
             print(f"Warning: page {p} out of range.")
 
-    pages_str = json.dumps(page_numbers)  # serialize list to string
-    unique_id = hashlib.sha256(pages_str.encode('utf-8')).hexdigest()
+    pages_str = f"{min(page_numbers)}-{max(page_numbers)}"
 
-    unique_filename = f"selected_pages_{unique_id}.pdf"
+    unique_filename = f"selected_pages_{pages_str}.pdf"
 
-    # Save in a public folder inside the Quarto project (_freeze/pdf)
-    pdf_dir = os.path.join(save_folder, "pdf")
+    # Save in a public folder inside the Quarto project (eg. _freeze/pdf)
+    pdf_dir = os.path.join(save_folder, "")
     os.makedirs(pdf_dir, exist_ok=True)
     output_pdf_path = os.path.join(pdf_dir, unique_filename)
 
